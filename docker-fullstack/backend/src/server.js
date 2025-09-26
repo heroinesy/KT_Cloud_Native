@@ -59,10 +59,6 @@ app.get('/api/users', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Backend server running on port ${PORT}`);
-});
-
 // Prometheus 메트릭 수집
 let httpRequestsTotal = 0;
 let httpRequestDuration = [];
@@ -117,4 +113,8 @@ nodejs_memory_usage_bytes{type="rss"} ${process.memoryUsage().rss}
 nodejs_memory_usage_bytes{type="heapTotal"} ${process.memoryUsage().heapTotal}
 nodejs_memory_usage_bytes{type="heapUsed"} ${process.memoryUsage().heapUsed}
 `);
+});
+
+app.listen(PORT, () => {
+  console.log(`Backend server running on port ${PORT}`);
 });
