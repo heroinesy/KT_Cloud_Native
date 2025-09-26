@@ -13,7 +13,7 @@ scrape_configs:
     static_configs:
       - targets: ['node-exporter:9100']
 
-  # # cAdvisor - 컨테이너 메트릭 (WSL에서 문제 발생)
-  # - job_name: 'cadvisor'
-  #   static_configs:
-  #     - targets: ['cadvisor:8080']
+  # cAdvisor - 컨테이너 메트릭
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
